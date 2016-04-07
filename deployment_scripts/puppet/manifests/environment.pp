@@ -32,6 +32,8 @@ define environment() {
           default => values_at($ips_array_, ['3-4']),
         }
         if ! $ips_array {
+          # documentation states 'Support the following ScaleIO custer modes: 1_node, 3_node and 5_node'
+          # is there a contradiction?
           fail("Only configuration cluster_3 and cluster_5 are supported, actualy ${count}")
         }
       }
@@ -45,6 +47,7 @@ define environment() {
           default => values_at($ips_array_, ['0-2']),
         }
         if ! $ips_array {
+          # please see a previous comment
           fail("Only configuration cluster_3 and cluster_5 are supported, actualy ${count}")
         }
       }

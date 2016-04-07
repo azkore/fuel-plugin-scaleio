@@ -10,6 +10,8 @@ The `ScaleIO` plugin allows to:
   * Configure OpenStack to use an existing ScaleIO cluster as a volume backend
   * Support the following ScaleIO custer modes: 1_node, 3_node and 5_node
     the mode is chosen automatically depending on the number of controller nodes
+    //What will happen if number of controller nodes is not supported? May be it's worth to add some pre-deployment task to
+    //check if it's not?
 
 
 ## Requirements
@@ -36,7 +38,7 @@ The `ScaleIO` plugin allows to:
 
 ## Limitations
 
-1. Plugin is only compatible with Mirantis 6.1 and 7.0.
+1. Plugin is only compatible with Mirantis OpenStack 6.1 and 7.0.
 2. Plugin supports the only Ubuntu environment.
 3. The only hyper converged environment is supported - there is no separate ScaleIO Storage nodes.
 4. Multi storage backend is not supported.
@@ -54,6 +56,7 @@ To install the ScaleIO Plugin from source code, you first need to prepare an env
 Prepare an environment for building the plugin on the **Fuel Master node**.
 
 0. You might want to make sure that kernel you have on the nodes for ScaleIO SDC installation (compute and cinder nodes) is suitable for the drivers present here: ``` ftp://QNzgdxXix:Aw3wFAwAq3@ftp.emc.com/ ```. Look for something like ``` Ubuntu/2.0.5014.0/4.2.0-30-generic ```. Local kernel version can be found with ``` uname -a ``` command.
+//I believe this paragraph is not necessary in the case of MOS, as long as plugin is tested with specific releases of MOS, besides, user cannot do this check before deployment.
 
 1. Install the standard Linux development tools:
     ```

@@ -1,3 +1,12 @@
+#please add‘notice’ functions which prints plugin name and entrypoint name
+#to each of the manifests described in this files
+#
+#$plugin_name            = "standalone-ceph"
+#notice("MODULAR: ${plugin_name}/hiera-override.pp")
+#
+#it will be in accordance with other modules and will simplify debugging
+#for people accustomed with this practice
+#
 ##############################################################################
 # ScaleIO prerequisites tasks
 ##############################################################################
